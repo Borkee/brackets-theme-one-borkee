@@ -1,7 +1,8 @@
 /* Define some variables used in multiple places */
-@background: #1d1f21;
+@background: #262d2f;
+//@background: #1d1f21;
 //@background: #2d2e30;
-@foreground: #eeeeee;
+@foreground: #eee;
 
 // TODO name there using function, not appearance
 @light: @foreground;
@@ -12,70 +13,90 @@
 @blue: #6caff2;
 @yellow: #e6cb32;
 @pink: #e06ea5;
-
 @comment: @medium;
 @gutter-text: @medium;
 @cursor: #528bff;
 @selection: #0050a0;
 @string: #7fbc52;
 
+/*DW*/
+@dwLightOrange:#e77e67;
+@dwLightGray:#aaa;
+@dwArcticBlue:#0099ff;
+@dwTurkis:#10ccff;
+@dwOrange:#da961f;
+@dwRedOrange:#df4c3d;
+@dwLightGreen:#a8bc9d; 
+@dwBrightGreen:#99ff33;
+@dwYellow:#baa533;
+@dwPistazie:#5fc88f;
+@dwTBlue:#33ccff;
+@dwTBlueDark:#62bfde;
+
 @atom: #64b6c3;
 @keyword: @purple;
 
 /* General */
-.cm-header { color: @pink; }
 
-.cm-variable { color: @light; }
+// TODO
+.cm-header      { color: @light; }
+.cm-header      { color: @pink; }
+
+// TODO what are these? what colors should they be?
+.cm-variable    { color: @light; }
 // among other things, this is the varibale type in less
-.cm-variable-2 { color: @red; }
-.cm-variable-3 { color: @blue; }
+.cm-variable-2  { color: @dwArcticBlue; }
+.cm-variable-3  { color: @blue; }
 
-.cm-link { color: @purple; }
+.cm-link        { color: @purple; }
 
-.cm-string { color: @string; }
-.cm-string-2 { color: @orange; }
+.cm-string      { color: @string; }
+.cm-string-2    { color: @orange; }
 
-.cm-meta { color: @pink; }
+.cm-meta        { color: @dwLightOrange; }
 
-.cm-comment { color: @comment; }
-.cm-error { color: @red; }
+.cm-comment     { color: @comment; }
+.cm-error       { color: @red; }
 
-.cm-atom { color: @atom; }
-.cm-number { color: @string; }
-.cm-attribute { color: @string; }
-.cm-plus { color: @string; }
-.cm-minus { color: @red; }
-.cm-def { color: @blue; }
-.cm-property { color: @purple; }
-.cm-hr { color: @orange; }
+.cm-atom        { color: @atom; }
+.cm-number      { color: @string; }
+.cm-attribute   { color: @string; }
+.cm-plus        { color: @string; }
+.cm-minus       { color: @red; }
+.cm-def         { color: @blue; }
+.cm-property    { color: @purple; }
+.cm-hr          { color: @orange; }
 
-.cm-operator { color: @foreground; }
-.cm-bracket { color: @foreground; }
+.cm-operator    { color: @dwLightGreen; }
+.cm-bracket     { color: @foreground; }
 
-.cm-rangeinfo { color: #6c71c4; }
-.cm-qualifier { color: @blue; }
-.cm-builtin { color: @orange; }
-.cm-tag { color: @blue; }
-.cm-quote { color: @blue; }
+.cm-rangeinfo   { color: #6c71c4; }
+.cm-qualifier   { color: @blue; }
+.cm-builtin     { color: @orange; }
+.cm-tag         { color: @blue; }
+.cm-quote       { color: @blue; }
+
 
 // function, this, return, etc.
-.cm-keyword { color: @keyword; }
+.cm-keyword     { color: @keyword; }
 
 /* CSS, LESS */
+//.cm-m-css { color:@dwTBlueDark }
 .cm-m-css {
     &.cm-tag { color: @red; }
-    &.cm-property { color: @light; }
-    &.cm-number { color: @orange; }
+    &.cm-property { color: @dwOrange; }
+    &.cm-number { color: @dwBrightGreen; }
     &.cm-atom { color: @atom; }
     &.cm-builtin { color: @blue; }
-    &.cm-qualifier { color: @orange; }
+    &.cm-qualifier { color: @dwTBlue; }
 }
 
 /* HTML, XML */
 .cm-m-xml {
-    &.cm-tag.cm-bracket { color: @light; }
-    &.cm-tag { color: @red; }
+    &.cm-tag.cm-bracket { color: @dwYellow; }
+    &.cm-tag { color: @dwYellow; }
     &.cm-attribute { color: @orange; }
+	&.cm-meta { color: @dwLightOrange; }
 }
 
 /* Shell */
@@ -86,14 +107,14 @@
 
 /* Javascript */
 .cm-m-javascript {
-
+    
     @js-atom: @orange;
     @js-operator: @light; // @atom;
-
+    
     @global-var: @blue;
     @func-scope-var: @light;
     @prop: @yellow;
-
+    
     // vars declared in function declaration
     &.cm-def { color: @func-scope-var; }
     // +, -, =, ||, &&, etc.
@@ -104,7 +125,7 @@
     &.cm-variable-2 { color: @func-scope-var; }
     &.cm-property { color: @prop; }
     &.cm-string.cm-property { color: @red; }
-
+    
     &.cm-atom { color: @js-atom; }
     &.cm-number { color: @js-atom; }
 }
@@ -112,25 +133,30 @@
 /* CoffeeScript, bleh */
 .cm-m-coffeescript {
     @js-atom: @orange;
-
+    
     &.cm-variable { color: @light; }
     &.cm-property { color: @blue; }
-
+    
     &.cm-operator { color: @yellow; }
     &.cm-punctuation { color: @light; }
-
+    
     &.cm-atom { color: @js-atom; }
     &.cm-number { color: @js-atom; }
 }
 
 /* C, PHP, Scala */
+.cm-m-clike { color:@dwOrange; }
 .cm-m-clike {
     &.cm-def { color: @orange; }
-    &.cm-variable-2 { color: @red; }
-    &.cm-operator { color: @light; }
+	&.cm-variable { color: @foreground; }
+    &.cm-variable-2 { color: @dwArcticBlue; }
+	&.cm-string      { color: @string; }
+    &.cm-operator { color: @dwLightGreen; }
     &.cm-atom { color: @atom; }
     &.cm-number { color: @orange; }
     &.cm-builtin { color: @blue; }
+	&.cm-meta        { color: @dwLightOrange; }
+	&.cm-keyword { color:@dwPistazie;}
 }
 
 /* Markdown */
@@ -143,7 +169,7 @@
         color: @purple;
         font-style: italic;
     }
-
+    
     &.cm-tag { color: @red; }
     &.cm-link { color: @blue; }
 }
@@ -159,14 +185,13 @@
 }
 
 /* Code Styling */
-.CodeMirror,
-.CodeMirror-scroll {
+.CodeMirror, .CodeMirror-scroll {
     background-color: @background;
     color: @foreground;
 }
 
 .CodeMirror-focused .CodeMirror-activeline-background {
-    // background: #2f2f2f;
+//    background: #2f2f2f;
 }
 
 .show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
@@ -207,7 +232,6 @@
 .CodeMirror .CodeMirror-selected {
     background: desaturate(fadeout(@selection, 50), 80);
 }
-
 .CodeMirror-focused .CodeMirror-selected {
     background: fadeout(@selection, 50);
 }
@@ -215,7 +239,7 @@
 .CodeMirror-matchingbracket,
 .CodeMirror-matchingtag {
     @color: @cursor;
-
+    
     /* Ensure visibility against gray inline editor background */
     background-color: fadeout(@color, 60);
     border-bottom: 1px solid @color;
@@ -260,17 +284,16 @@
     }
 }
 
-.CodeMirror-foldgutter-open::after {
+.CodeMirror-foldgutter-open:after {
     color: @gutter-text;
 }
-
-.CodeMirror-foldgutter-folded::after {
+.CodeMirror-foldgutter-folded:after {
     color: @gutter-text;
 }
 
 .CodeMirror.over-gutter,
 .CodeMirror-activeline {
-    .CodeMirror-foldgutter-open::after {
+    .CodeMirror-foldgutter-open:after {
         color: @gutter-text;
     }
 }
