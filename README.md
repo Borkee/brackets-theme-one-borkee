@@ -1,4 +1,5 @@
-# brackets-theme-one-gray
+# brackets-theme-one-borkee
+# This is just a copy of Catdads "Brackets-Theme-One-Gray" with my own highlighting 'n stuff.
 
 [![Build Status](https://travis-ci.org/catdad/brackets-theme-one-gray.svg?branch=master)](https://travis-ci.org/catdad/brackets-theme-one-gray)
 
